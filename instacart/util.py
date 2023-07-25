@@ -1,4 +1,11 @@
 import pandas as pd
+from trane.typing.column_schema import ColumnSchema
+from trane.typing.logical_types import (
+    Categorical,
+    Datetime,
+    Double,
+    Integer,
+)
 
 def load_data():
     dataframes = {
@@ -20,3 +27,28 @@ def load_data():
     ]
 
     return dataframes, relationships
+
+def get_meta(df, entity_col):
+    meta = {}
+    for col in df.columns:
+        if df[col].dtype == "int":
+            meta[col] = ColumnSchema(
+                Integer,
+                semantic_tags=({"numeric"} if col != entity_col else {"numeric", "index"})
+            )
+        if df[col].dtype == "float":
+            meta[col] = ColumnSchema(
+                Double,
+                semantic_tags=({"numeric"} if col != entity_col else {"numeric", "index"})
+            )
+        if df[col].dtype == "object":
+            meta[col] = ColumnSchema(
+                Categorical,
+                semantic_tags=({"category"} if col != entity_col else {"category", "index"})
+            )
+        if df[col].dtype == "datetime64[ns]":
+            meta[col] = ColumnSchema(
+                Datetime,
+                semantic_tags=({} if col != entity_col else {"index"})
+            )
+    return meta
