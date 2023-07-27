@@ -34,21 +34,21 @@ def get_meta(df, entity_col):
         if df[col].dtype == "int":
             meta[col] = ColumnSchema(
                 Integer,
-                semantic_tags=({"numeric"} if col != entity_col else {"numeric", "index"})
+                semantic_tags=({"numeric"} if col != entity_col else {"numeric", "primary_key"})
             )
         if df[col].dtype == "float":
             meta[col] = ColumnSchema(
                 Double,
-                semantic_tags=({"numeric"} if col != entity_col else {"numeric", "index"})
+                semantic_tags=({"numeric"} if col != entity_col else {"numeric", "primary_key"})
             )
         if df[col].dtype == "object":
             meta[col] = ColumnSchema(
                 Categorical,
-                semantic_tags=({"category"} if col != entity_col else {"category", "index"})
+                semantic_tags=({"category"} if col != entity_col else {"category", "primary_key"})
             )
         if df[col].dtype == "datetime64[ns]":
             meta[col] = ColumnSchema(
                 Datetime,
-                semantic_tags=({} if col != entity_col else {"index"})
+                semantic_tags=({} if col != entity_col else {"primary_key"})
             )
     return meta
