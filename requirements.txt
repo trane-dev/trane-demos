@@ -1,1 +1,3 @@
 trane >= 0.4.0
+black[jupyter]
+ruff
