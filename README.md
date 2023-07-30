@@ -15,7 +15,7 @@ Open Google Colaboratory Demo Link from the list below
 
 | Name      | Description | Google Colab Link |
 | ----------- | ----------- | ------------------ |
-| Instacart      | Delivery company       | [Google Colab](https://colab.research.google.com/)
+| Instacart      | Delivery company       | [Google Colab](https://colab.research.google.com/drive/1huNMlPMfQwkc8huR-WAxlHoiVWzehF6N?usp=sharing)
 
 ## Local Usage
 1. Clone repo
