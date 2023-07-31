@@ -11,7 +11,7 @@ This repository contains demos that showcase the functionality of [Trane](https:
 # Usage
 
 ## Google Colab
-Open Google Colaboratory Demo Link from the list below
+Open Google Colab link from the list below:
 
 | Name      | Description | Google Colab Link |
 | ----------- | ----------- | ------------------ |
