@@ -3,6 +3,8 @@ import featuretools as ft
 def get_entityset(name, df, target_entity, entity_col, time_index, relationships):
     es = ft.EntitySet(name)
 
+    print("Adding dataframe...")
+    print(f"dataframe_name={target_entity}, time_index={time_index}, index=__id__")
     es.add_dataframe(
         dataframe=df.reset_index(),
         dataframe_name=target_entity,
@@ -71,6 +73,9 @@ def get_entityset(name, df, target_entity, entity_col, time_index, relationships
             parent[idx] = current_entity
             target_key = get_upstream_keys((idx, neighbor["target"]), neighbor["target_key"])
             
+            print("Normalizing dataframe...")
+            print(f"base_dataframe_name={current_entity[1]}, new_dataframe_name={neighbor['target']}, index={target_key}")
+            print(f"Additional columns: {[col for col in df.columns if col.startswith(neighbor['target']) and col != time_index]}")
             es.normalize_dataframe(
                 base_dataframe_name=current_entity[1],
                 new_dataframe_name=neighbor["target"],
@@ -81,6 +86,8 @@ def get_entityset(name, df, target_entity, entity_col, time_index, relationships
             
             candidate_entities.append((idx, neighbor["target"]))
 
+    print("Normalizing dataframe...")
+    print(f"base_dataframe_name={target_entity}, new_dataframe_name={entity_col}, index={entity_col}")
     es.normalize_dataframe(
         base_dataframe_name=target_entity if "." not in entity_col else entity_col.split(".")[-2],
         new_dataframe_name=entity_col,
