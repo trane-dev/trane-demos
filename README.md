@@ -30,22 +30,3 @@ pip install -r requirements.txt
 ```
 jupyter notebook
 ```
-
-
-## Citing Trane
-If you use Trane, please consider citing the following paper:
-
-Ben Schreck, Kalyan Veeramachaneni. [What Would a Data Scientist Ask? Automatically Formulating and Solving Predictive Problems.](https://dai.lids.mit.edu/wp-content/uploads/2017/10/Trane1.pdf) *IEEE DSAA 2016*, 440-451
-
-BibTeX entry:
-
-```bibtex
-@inproceedings{schreck2016would,
-  title={What Would a Data Scientist Ask? Automatically Formulating and Solving Predictive Problems},
-  author={Schreck, Benjamin and Veeramachaneni, Kalyan},
-  booktitle={Data Science and Advanced Analytics (DSAA), 2016 IEEE International Conference on},
-  pages={440--451},
-  year={2016},
-  organization={IEEE}
-}
-```
