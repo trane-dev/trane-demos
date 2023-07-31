@@ -6,7 +6,7 @@
 <i>Trane Demos</i>
 </p>
 
-This repository contains demos that showcase the functionality in the [Trane library](https://github.com/trane-dev/Trane).
+This repository contains demos that showcase the functionality of [Trane](https://github.com/trane-dev/Trane).
 
 # Usage
 
