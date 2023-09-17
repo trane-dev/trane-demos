@@ -16,6 +16,9 @@ Open Google Colab link from the list below:
 | Name      | Description | Google Colab Link |
 | ----------- | ----------- | ------------------ |
 | Instacart      | Delivery company       | [Google Colab](https://colab.research.google.com/drive/1huNMlPMfQwkc8huR-WAxlHoiVWzehF6N?usp=sharing)
+| Yelp      | crowd-sourced reviews       | [Google Colab](https://colab.research.google.com/drive/1huNMlPMfQwkc8huR-WAxlHoiVWzehF6N?usp=sharing)
+| NASA      | Delivery company       | [Google Colab](https://colab.research.google.com/drive/1huNMlPMfQwkc8huR-WAxlHoiVWzehF6N?usp=sharing)
+
 
 ## Local Usage
 1. Clone repo
