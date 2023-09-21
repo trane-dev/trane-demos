@@ -1,14 +1,12 @@
 <p align="center">
-<img width=30% src="https://dai.lids.mit.edu/wp-content/uploads/2018/06/Trane-logo-300x180.jpg" alt=“Trane_Logo” />
+<a href="https://www.trane.dev" alt="Trane" target="_blank">
+<img width=50% src="https://github.com/trane-dev/Trane/blob/main/docs/trane-header.png" alt="Trane Logo" />
+</a>
 </p>
 
 <p align="center">
-<i>Trane Demos</i>
+<i>Demos with <a href="https://github.com/trane-dev/Trane">Trane</a></i>
 </p>
-
-This repository contains demos that showcase the functionality of [Trane](https://github.com/trane-dev/Trane).
-
-# Usage
 
 ## Google Colab
 Open Google Colab link from the list below:
