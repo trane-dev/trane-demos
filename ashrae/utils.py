@@ -1,28 +1,20 @@
 import pandas as pd
-from trane.metadata import MultiTableMetadata
+from trane.metadata import SingleTableMetadata
 
 
-def load_data(nrows):
+def load_data(nrows=None):
     train = pd.read_csv('data/train.csv', nrows=nrows)
     weather = pd.read_csv('data/weather_train.csv', nrows=nrows)
     building = pd.read_csv('data/building_metadata.csv', nrows=nrows)
     train['meter_id'] = range(train.shape[0])
-    dataframes = {
-        'meter_readings': train,
-        'weather': weather,
-        'building': building
-    }
-    metadata = MultiTableMetadata.from_data(dataframes)
-    metadata.set_primary_key('building', 'building_id')
-    metadata.set_primary_key('weather', 'site_id')
-    metadata.set_primary_key('meter_readings', 'meter_id')
-    metadata.set_time_index('meter_readings', 'timestamp')
 
-    metadata.set_type('building', 'primary_use', 'Categorical')
+    train = train.merge(building, left_on = "building_id", right_on = "building_id", how = "left")
+    train = train.merge(weather, left_on = ["site_id", "timestamp"], right_on = ["site_id", "timestamp"])
+    del weather, building
 
-    relationships = [
-        ('building', 'building_id', 'meter_readings', 'building_id'),
-        ('weather', 'site_id', 'building', 'site_id')
-    ]
-    metadata.add_relationships(relationships)
-    return dataframes, metadata
+    dataframe = train
+    metadata = SingleTableMetadata.from_data(dataframe)
+    metadata.set_primary_key('meter_id')
+    metadata.set_time_key('timestamp')
+    metadata.set_type('primary_use', 'Categorical')
+    return dataframe, metadata

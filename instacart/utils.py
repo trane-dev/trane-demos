@@ -62,7 +62,7 @@ def load_instacart_data(dtype_backend='pyarrow', nrows=None):
     metadata.set_primary_key('products', 'product_id')
     metadata.set_primary_key('orders', 'order_id')
 
-    metadata.set_time_index('orders', 'order_time')
+    metadata.set_time_key('orders', 'order_time')
 
     metadata.set_type('aisles', 'aisle', 'Categorical')
     metadata.set_type('departments', 'department', 'Categorical')

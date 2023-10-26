@@ -26,7 +26,7 @@ def load_data():
     metadata.set_primary_key("business", "business_id")
     metadata.set_primary_key("checkin", "business_id")
     metadata.set_primary_key("review", "review_id")
-    metadata.set_time_index("review", "date")
+    metadata.set_time_key("review", "date")
     metadata.set_type("business", "business_id", "Categorical")
     metadata.set_type("business", "name", "Categorical")
     metadata.set_type("business", "address", "NaturalLanguage")

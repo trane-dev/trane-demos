@@ -32,7 +32,7 @@ def load_retail(force_reload=False):
     metadata.set_type('Description', 'Categorical')
     metadata.set_type('Customer ID', 'Categorical')
     metadata.set_type('Country', 'Categorical')
-    metadata.set_time_index('InvoiceDate')
+    metadata.set_time_key('InvoiceDate')
     metadata.ml_types['Customer ID'].add_tags('foreign_key')
     df.to_parquet(parquet_file, engine='pyarrow', index=False, compression='gzip')
     return df, metadata

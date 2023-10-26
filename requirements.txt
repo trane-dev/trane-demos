@@ -1,4 +1,2 @@
 trane >= 0.6.0
-black[jupyter]
-ruff
-jupyter
+jupyter >= 1.0.0
